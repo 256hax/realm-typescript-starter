@@ -27,7 +27,7 @@ export const main = async () => {
   //  Open Realm
   // ----------------------------------------
   const realm = await Realm.open({
-    path: "realm-files/myrealm",
+    path: "realm-files/myreal",
     schema: [TaskSchema],
   });
 
@@ -102,12 +102,15 @@ export const main = async () => {
   // ----------------------------------------
   //  Delete Data
   // ----------------------------------------
-  // realm.write(() => {
-  //   console.log('\n Delete the task from the realm.');
-  //   realm.delete(task1);
-  //   // Discard the reference.
-  //   task1 = null;
-  // });
+  realm.write(() => {
+    const tasks = realm.objects("Task");
+    const openTask1 = tasks.filtered("_id == $0", task1Uuid);
+    realm.delete(openTask1);
+    console.log('\n Delete the task from the realm:', task1Uuid);
+
+    // Discard the reference.
+    task1 = null;
+  });
   
   // ----------------------------------------
   //  Close Realm
