@@ -18,12 +18,14 @@ Realm x TypeScript x Node.js minimal starter template.
 Terminal log:
 ```
 --- Write Data ---
-task1Uuid => 2300492e-94df-47af-8f80-81b6312d92be
-task2Uuid => b8889da9-88bd-4ebd-8aae-720fed51bc53
+task1Uuid => 6965e12f-cb6d-47b0-8de4-dccd43fe4b11
+task2Uuid => 8f52884e-bec4-45f2-8dec-c4bda5d978e5
 created two tasks: Shopping & Exercise
 
 --- Read Data ---
 The lists of tasks are: Shopping,Exercise
 The lists of open tasks are: Shopping,Exercise
 The lists of tasks in alphabetical order are: Exercise,Shopping
+
+ Delete the task from the realm: 6965e12f-cb6d-47b0-8de4-dccd43fe4b11
 ```
